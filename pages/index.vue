@@ -1,4 +1,5 @@
 <template>
+  <Header/>
   <div>
     pagina inicial 1
   </div>

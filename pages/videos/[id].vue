@@ -5,6 +5,8 @@
   <div>
     Você está no video de numero(idParams) {{ idParams }}
   </div>
+  <VideosDetalhes/>
+  <VideosControlePlay/>
 </template>
 
 <script setup lang="ts">
