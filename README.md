@@ -73,3 +73,13 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Curso
+
+Nuxt 3 
+https://www.youtube.com/watch?v=WahQ5AoXpuU&list=PLxd1RHU8YgYmTKohDs2lTqGvy0eaZJFfK&index=1
+
+Canal Pablo Codes
+https://www.youtube.com/@PabloCodess
+
+
