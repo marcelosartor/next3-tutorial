@@ -10,6 +10,9 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'exibicao',
+})
 
 const route = useRoute()
 const idParams = computed(()=>route.params.id)
