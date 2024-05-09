@@ -12,6 +12,7 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'exibicao',
+  middleware: ['videos','auth']
 })
 
 const route = useRoute()
