@@ -10,7 +10,7 @@
       </iframe>
    
       <div>
-        <button @click="adicionarFavoritos(video)">Adicionar Favorito</button>
+        <button @click="videoStore.adicionarFavorito(video)">Adicionar Favorito</button>
       </div>
     </div>
   </div>
@@ -19,9 +19,7 @@
 
 <script setup lang="ts">
 import { Video } from '@/interfaces/video';
-
-  const favoritos = useFavoritos()
-    
+   
   const videos: Video[] = [
     {
       id: 1,
@@ -49,13 +47,20 @@ import { Video } from '@/interfaces/video';
     },
   ]
 
-  const converteDataBrasil = (dataAtual:string) => {
-    return new Date(dataAtual).toLocaleDateString("pt-BR")
-  }
+  const videoStore = useVideoStore();
+
+  /* Use state
+  const favoritos = useFavoritos()
 
   const adicionarFavoritos = (video: Video) => {
     favoritos.value.push(video)
   }
+  */
+
+  const converteDataBrasil = (dataAtual:string) => {
+    return new Date(dataAtual).toLocaleDateString("pt-BR")
+  }
+
 
 </script>
 

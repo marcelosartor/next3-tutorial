@@ -5,7 +5,10 @@ export default defineNuxtConfig({
   alias: {
     css: '/<rootDir>/assets/css'
   },
-  
+  modules: ['@pinia/nuxt'],
+  pinia: {
+    storesDirs: ['./stores/**', ],
+  },
   //app:{
   //  baseURL: process.env.BASE_URL || 'http://localhost:3000',
   //}

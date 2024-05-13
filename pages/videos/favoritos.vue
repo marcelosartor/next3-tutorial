@@ -7,7 +7,7 @@
       </iframe>
   
       <div>
-        <button @click="removerFavoritos(video.id)">Remover Favorito</button>
+        <button @click="videoStore.deletarFavorito(video.id)">Remover Favorito</button>
       </div>
     </div>
   </div>
@@ -15,11 +15,16 @@
 </template>
 
 <script setup lang="ts">
-const favoritos = useFavoritos()
 
-const removerFavoritos = (id:number) =>{
+const videoStore = useVideoStore();
+const { favoritos } = storeToRefs(videoStore)
+
+/* Use state
+const favoritos = useFavoritos()
+const deletarFavorito = (id:number) =>{
   favoritos.value = favoritos.value.filter((video)=> video.id !== id)
 }
+*/
 
 </script>
 
