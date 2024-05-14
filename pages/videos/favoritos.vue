@@ -7,7 +7,7 @@
       </iframe>
   
       <div>
-        <button @click="videoStore.deletarFavorito(video.id)">Remover Favorito</button>
+        <button @click="removerFavorito(video.id)">Remover Favorito</button>
       </div>
     </div>
   </div>
@@ -18,7 +18,12 @@
 
 const videoStore = useVideoStore();
 const { favoritos } = storeToRefs(videoStore)
+const { $toast } = useNuxtApp()
 
+const removerFavorito = (id:number) =>{
+  videoStore.deletarFavorito(id)
+  $toast.error('Remoido com sucesso')  
+}
 /* Use state
 const favoritos = useFavoritos()
 const deletarFavorito = (id:number) =>{
