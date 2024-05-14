@@ -88,3 +88,4 @@ https://www.youtube.com/@PabloCodess
 #### aula07 - 07 - Composables - Nuxt 3
 #### aula08 - 08 - UseState - Nuxt 3
 #### aula08Pinea - 08 - Pinea - Nuxt 3
+#### aula09 - 09 - Plugins - Nuxt 3
