@@ -89,3 +89,4 @@ https://www.youtube.com/@PabloCodess
 #### aula08 - 08 - UseState - Nuxt 3
 #### aula08Pinea - 08 - Pinea - Nuxt 3
 #### aula09 - 09 - Plugins - Nuxt 3
+#### aula10 - 10 - Modules - Nuxt 3

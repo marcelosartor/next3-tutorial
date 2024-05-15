@@ -1,5 +1,6 @@
 <template>
   <div> Videos favoritos </div>
+  <h1>{{ $t('tituloFavoritos') }}</h1>
   <div class="videos">
     <div v-for="video in favoritos" :key="video.id">
       <h2>{{ video.descricao }}</h2>
@@ -22,7 +23,7 @@ const { $toast } = useNuxtApp()
 
 const removerFavorito = (id:number) =>{
   videoStore.deletarFavorito(id)
-  $toast.error('Remoido com sucesso')  
+  $toast.error('Removido com sucesso')  
 }
 /* Use state
 const favoritos = useFavoritos()
