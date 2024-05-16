@@ -5,24 +5,15 @@ export default defineNuxtConfig({
   alias: {
     css: '/<rootDir>/assets/css'
   },
-  modules: ['@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', "@nuxtjs/i18n",],
+  modules: [
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
+    "@nuxtjs/i18n",
+    "@nuxt/ui"
+  ],
   i18n:{
     vueI18n: './i18n'
   },
-    /*
-    vueI18n:{
-      fallbackLocale: 'en',
-      messages:{
-        en: {
-          greeting: 'Hello world'
-        },
-        es: {
-          greeting: 'Hola mundo'
-        }
-      }
-    }
-    */
-
   pinia: {
     storesDirs: ['./stores/**', ],
   },
