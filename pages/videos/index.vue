@@ -1,20 +1,37 @@
 <template>
-  <div>Videos</div>
+  <div class="text-4xl">Videos</div>
   
   <NuxtLink to="/videos/favoritos">Favoritos</NuxtLink>
-  <h1>{{ $t('titulo') }}</h1>
-  <div class="videos">
-    <div v-for="video in videos" :key="video.id">
-      <h2>{{ video.descricao }}</h2>
+  
+  <h1 class="text-4x1 text-center">{{ $t('titulo') }}</h1>
+  
+  <div class="grid grid-cols-2 lg:grid-cols-3 items-center justify-center gap-4">
+    <UCard v-for="video in videos" :key="video.id">
+    <template #header>
+      {{ video.descricao }}
+    </template>
+    <iframe class="h-48 w-full" :src="video.url" title="Youtube video player" frameborder="0">
+    </iframe>
+    <template #footer>
       <p v-data-horario="'dd/mm/yyyy'">{{ video.data_postagem }}</p>
-      <iframe width="550" height="400" :src="video.url" title="Youtube video player" frameborder="0">
-      </iframe>
-   
-      <div>
-        <button @click="videoStore.adicionarFavorito(video)">Adicionar Favorito</button>
+      <div class="flex justify-between">
+        <UButton label="Button" @click="favoritar(video)">Adicionar Favorito</UButton>
+        <NuxtLink :to="{
+            name: 'videos-id',
+            params: { id: video.id.toString() }
+          }">
+          <UButton label="Ver Video" color="gray" class="">
+            <template #trailing>
+              <UIcon name="i-heroicons-arrow-right-20-solid" />
+            </template>
+          </UButton>
+        </NuxtLink>
       </div>
-    </div>
+    </template>
+  </UCard>
   </div>
+  
+  
 
 </template>
 
@@ -22,11 +39,12 @@
 import { Video } from '@/interfaces/video';
 
   const { $toast } = useNuxtApp()
-
-  onMounted(()=>{
+  const { adicionarFavorito } = useVideoStore();
+  
+  const favoritar = (video:Video)=>{
+    adicionarFavorito(video)
     $toast.success("Toast adicionado com sucesso!")
-  })
-
+  }
    
   const videos: Video[] = [
     {
@@ -55,29 +73,10 @@ import { Video } from '@/interfaces/video';
     },
   ]
 
-  const videoStore = useVideoStore();
-
-  /* Use state
-  const favoritos = useFavoritos()
-
-  const adicionarFavoritos = (video: Video) => {
-    favoritos.value.push(video)
-  }
-  */
+  
 
 </script>
 
 <style scoped>
-  .videos {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .videos button {
-    display: inline-block;
-  }
 
 </style>

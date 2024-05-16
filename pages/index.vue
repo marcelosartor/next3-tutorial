@@ -1,7 +1,7 @@
 <template>
   <Header/>
-  <div>
-    pagina inicial 1
+  <div class="text-5x1 text-center">
+    pagina inicial
   </div>
 </template>
 
