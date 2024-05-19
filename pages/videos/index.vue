@@ -45,7 +45,13 @@ import { Video } from '@/interfaces/video';
     adicionarFavorito(video)
     $toast.success("Toast adicionado com sucesso!")
   }
+
+  const videos = ref<Video[]>([])
    
+  onMounted(async ()=> {
+    videos.value = await $fetch('/api/v1/videos')
+  })
+  /*
   const videos: Video[] = [
     {
       id: 1,
@@ -72,7 +78,7 @@ import { Video } from '@/interfaces/video';
       data_postagem: '2023-10-05'
     },
   ]
-
+*/
   
 
 </script>
