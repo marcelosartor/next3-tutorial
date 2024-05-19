@@ -31,29 +31,13 @@
             class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         
         <div class="text-sm lg:flex-grow mr-2">
-          <NuxtLink 
-            to="/"
+          <NuxtLink  v-for="rota in rotasSistemas()"
+            :key="rota.name"
+            :to="rota.path"
             class="block mt-4  mr-2 lg:inline-block lg:mt-0 text-teal-200 hover:text:white">
-            Home
+            {{ rota.name }}
           </NuxtLink>
-          
-          <NuxtLink 
-            to="/videos"
-            class="block mt-4  mr-2 lg:inline-block lg:mt-0 text-teal-200 hover:text:white">
-            Videos
-          </NuxtLink>
-
-          <NuxtLink 
-            to="/videos/adicionar"
-            class="block mt-4  mr-2 lg:inline-block lg:mt-0 text-teal-200 hover:text:white">
-            Adicionar Videos
-          </NuxtLink>
-
-          <NuxtLink 
-            to="/videos/favoritos"
-            class="block mt-4  mr-2 lg:inline-block lg:mt-0 text-teal-200 hover:text:white">
-            Videos favoritos
-          </NuxtLink>
+         
         </div>
         <div>
           <ClientOnly>

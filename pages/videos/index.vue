@@ -13,7 +13,7 @@
     <iframe class="h-48 w-full" :src="video.url" title="Youtube video player" frameborder="0">
     </iframe>
     <template #footer>
-      <p v-data-horario="'dd/mm/yyyy'">{{ video.data_postagem }}</p>
+      <p>{{ formataData(video.data_postagem,'dd/mm/yyyy') }}</p>
       <div class="flex justify-between">
         <UButton label="Button" @click="favoritar(video)">Adicionar Favorito</UButton>
         <NuxtLink :to="{
@@ -37,6 +37,7 @@
 
 <script setup lang="ts">
 import { Video } from '@/interfaces/video';
+import formataData from '~/server/utils/formataData';
 
   const { $toast } = useNuxtApp()
   const { adicionarFavorito } = useVideoStore();
