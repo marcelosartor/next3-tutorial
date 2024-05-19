@@ -12,7 +12,7 @@
     <iframe class="h-[500px] w-full" :src="video?.url" title="Youtube video player" frameborder="0">
     </iframe>
     <template #footer>
-      <p v-data-horario="'dd/mm/yyyy'">{{ video?.data_postagem || ''}}</p>
+      <p>{{ formataData(video?.data_postagem as string,'dd/mm/yyyy') }}</p>
       <div class="flex justify-between">
         <UButton label="Button" @click="abriModal()">Editar Video</UButton>
         <UButton label="Deletar Video" color="gray" @click="deletarVideo()">
@@ -53,6 +53,7 @@
 import { Video } from '~/interfaces/video';
 import { object, string, type InferType } from 'yup'
 import type { FormSubmitEvent } from '#ui/types'
+import formataData from '~/server/utils/formataData';
 /*
 definePageMeta({
   layout: 'exibicao',
@@ -65,6 +66,10 @@ const route = useRoute()
 const idParams = computed(()=>route.params.id)
 const video = ref<Video>()
 const { $toast } = useNuxtApp()
+
+const videos = computed(()=>{
+  return video.value?.data_postagem
+})
 
 const schema = object({
   descricao: string().required('Required'),

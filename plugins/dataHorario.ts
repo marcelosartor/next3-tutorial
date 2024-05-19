@@ -3,6 +3,9 @@ export default defineNuxtPlugin(({vueApp})=>{
   vueApp.directive('data-horario',{
     mounted(el,binding){
       const dataFormatada = new Date(el.innerText)
+      console.log('el.innerText:',el.innerText)
+      console.log('el',el)
+      console.log('binding.value:',binding.value)
       el.innerHTML = formataData(dataFormatada,binding.value)
     }
   })

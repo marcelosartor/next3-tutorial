@@ -90,3 +90,6 @@ https://www.youtube.com/@PabloCodess
 #### aula08Pinea - 08 - Pinea - Nuxt 3
 #### aula09 - 09 - Plugins - Nuxt 3
 #### aula10 - 10 - Modules - Nuxt 3
+#### aula11 - 11 - Nuxt UI - Nuxt 3
+#### aula12 - 12 - Server (Backend) - Nuxt 3
+#### aula13 - 13 - Utils - Nuxt 3
