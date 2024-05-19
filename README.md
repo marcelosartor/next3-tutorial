@@ -93,3 +93,6 @@ https://www.youtube.com/@PabloCodess
 #### aula11 - 11 - Nuxt UI - Nuxt 3
 #### aula12 - 12 - Server (Backend) - Nuxt 3
 #### aula13 - 13 - Utils - Nuxt 3
+#### aula14 - 14 - 14 - useFetch e useAsyncData - Nuxt 3
+  Utilizado na aula
+  Reqres API: https://reqres.in/
