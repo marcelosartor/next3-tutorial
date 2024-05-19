@@ -9,6 +9,7 @@ export default  () => {
     { name: 'videos', path: '/videos'},
     { name: 'Adicionar Videos', path: '/videos/adicionar'},
     { name: 'Favoritos', path: '/videos/favoritos'},
+    { name: 'Clientes', path: '/videos/clientes'},
   ] 
   return rotas
 }
