@@ -10,6 +10,7 @@ export default defineNuxtPlugin(({vueApp})=>{
 
 const formataData = (date: Date, type:string = '') => {
   switch (type) {
+    case 'yyyy-mm-dd': return date.toLocaleDateString('pr-BR')
     case 'dd/mm/yyyy': return date.toLocaleDateString('pr-BR')
     case 'hh:mm': return date.toLocaleTimeString('pr-BR')
     default: return date.toLocaleString('pr-BR')

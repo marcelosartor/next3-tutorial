@@ -10,7 +10,7 @@ export default defineNuxtPlugin(({vueApp})=>{
     toast(message,{
       type: "error",
       position: "bottom-right",
-      icon: "🚀",
+      icon: "❌",
       theme: "dark"
     })
   }
