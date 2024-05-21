@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-5x1 text-center my-4">Clientes</h1>
+    <h1 class="text-5xl text-center my-4">Clientes</h1>
     {{ status }}
     <button @click="refresh" class="px-4 py-2 bg-green-400 shadow-md rounded-md">
       Recaregar
@@ -40,15 +40,15 @@ console.log('----useAsyncData---------------------------')
 //console.log( payload.data['cliente'] )
 //const {payload} = useNuxtApp()
 //console.log( payload.data['cliente'] )
-const { data: cliente } = await useAsyncData('cliente',async () => {
+const { data: cliente  } = await useAsyncData('cliente',async () => {
   const [ pessoas, aleatorios ] = await Promise.all([
     $fetch('https://reqres.in/api/users'),
     $fetch('https://reqres.in/api/unknown'),
   ])
   return { pessoas, aleatorios }
 })
-console.log('cliente.value.pessoas:',cliente.value.pessoas)
-console.log('cliente.value.aleatorios:',cliente.value.aleatorios)
+console.log('cliente.value.pessoas:',cliente.value?.pessoas)
+console.log('cliente.value.aleatorios:',cliente.value?.aleatorios)
 
 /* Exemplo */
 const pagina = ref(1)
@@ -56,8 +56,8 @@ console.log('---useFetch----------------------------')
 const { data: clientes, pending, error, refresh, execute, status} = useFetch(`https://reqres.in/api/users`,{
   lazy: true,
   //pick: ['page','data']
-  transform: (clientes) => { 
-    return clientes.data.map((p) =>({
+  transform: (clientes:any) => { 
+    return clientes.data.map((p:any) =>({
     id: p.id,
     nome: p.first_name,
     sobrenome: p.last_name,

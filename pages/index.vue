@@ -1,6 +1,6 @@
 <template>
   <Header/>
-  <div class="text-5x1 text-center">
+  <div class="text-5xl text-center">
     pagina inicial
   </div>
 </template>

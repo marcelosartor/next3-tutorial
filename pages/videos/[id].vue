@@ -62,14 +62,7 @@ definePageMeta({
 */
 const router = useRouter()
 const isOpen = ref(false)
-const route = useRoute()
-const idParams = computed(()=>route.params.id)
-const video = ref<Video>()
 const { $toast } = useNuxtApp()
-
-const videos = computed(()=>{
-  return video.value?.data_postagem
-})
 
 const schema = object({
   descricao: string().required('Required'),
@@ -84,15 +77,26 @@ const state = reactive({
   url: ''
 })
 
+const { id } = useRoute().params
 
 
-onMounted(async ()=>{
-  video.value = await $fetch(`/api/v1/videos/${idParams.value}`)
+console.log('id:',id)
+const { data: video } = await useFetch(`/api/v1/videos/${id}`)
+console.log('video',video)
+if(!video.value){
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Video not found'
+  })
+}
+
+const videos = computed(()=>{
+  return video.value?.data_postagem
 })
 
 async function onSubmit (event: FormSubmitEvent<Schema>) {
   try{
-    await $fetch(`/api/v1/videos/${idParams.value}`,
+    await $fetch(`/api/v1/videos/${id}`,
       {
         method: 'PUT',
         body: state

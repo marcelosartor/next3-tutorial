@@ -5,12 +5,12 @@ import { H3Event } from "h3"
 const { client } = postgresClient()
 
 export const buscaVideos = async () =>{
-  try{
-    const resultado = await client.query('SELECT * FROM videos ORDER BY descricao ASC;')
-    return resultado.rows as Video[]
-  }catch  (error){
-    console.log(error)
-  }
+  throw createError({
+    statusCode: 500,
+    statusMessage: "Erro ao buscar videos"
+  })
+  //const resultado = await client.query('SELECT * FROM videos ORDER BY descricao ASC;')
+  //return resultado.rows as Video[]
 }
 
 export const buscaVideoPorId = async (event:H3Event) =>{
