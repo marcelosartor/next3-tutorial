@@ -3,7 +3,7 @@
   
   <NuxtLink to="/videos/favoritos">Favoritos</NuxtLink>
   
-  <h1 class="text-4x1 text-center">{{ $t('titulo') }}</h1>
+  <h1 class="text-4xl text-center">{{ $t('titulo') }}</h1>
   
   <div class="grid grid-cols-2 lg:grid-cols-3 items-center justify-center gap-4">
     <UCard v-for="video in videos" :key="video.id">
@@ -37,6 +37,7 @@
 
 <script setup lang="ts">
 import { Video } from '@/interfaces/video';
+import { ErrorTypes } from 'vue-router';
 import formataData from '~/server/utils/formataData';
 
   const { $toast } = useNuxtApp()
@@ -46,11 +47,17 @@ import formataData from '~/server/utils/formataData';
     adicionarFavorito(video)
     $toast.success("Toast adicionado com sucesso!")
   }
-
-  const videos = ref<Video[]>([])
-   
-  onMounted(async ()=> {
-    videos.value = await $fetch('/api/v1/videos')
+  
+  const { data : videos, error } = await useFetch('/api/v1/videos')
+  //const videos = ref<Video[]>([])
+  console.log('error1 ',error.value) 
+  console.log('errorV ',videos) 
+  onMounted(()=> {
+    console.log('error2 ',error.value) 
+    if (error.value){
+      console.log('error3 ',error) 
+      $toast.error(error.value.statusMessage || 'teste')
+    }
   })
   /*
   const videos: Video[] = [

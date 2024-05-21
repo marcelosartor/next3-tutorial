@@ -1,6 +1,6 @@
 <template>
 
-  <h1 class="text-4x1 text-center">{{ $t('tituloFavoritos') }}</h1>
+  <h1 class="text-4xl text-center">{{ $t('tituloFavoritos') }}</h1>
   
   <div class="grid grid-cols-2 lg:grid-cols-3 items-center justify-center gap-4">
   <UCard v-for="video in favoritos" :key="video.id">
