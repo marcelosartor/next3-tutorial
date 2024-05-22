@@ -1,4 +1,5 @@
 <template>
+<div>
   <div>
     <h1 class="text-5xl text-center my-4">Clientes</h1>
     {{ status }}
@@ -27,9 +28,15 @@
       {{ i }}
     </button>
   </div>
+</div>    
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  pageTransition:{
+    name:"slide",
+  }
+})
 
 /* Exemplo */
 console.log('----useAsyncData---------------------------')

@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="text-4xl">Videos</div>
   
   <NuxtLink to="/videos/favoritos">Favoritos</NuxtLink>
@@ -30,9 +31,7 @@
     </template>
   </UCard>
   </div>
-  
-  
-
+</div>    
 </template>
 
 <script setup lang="ts">
