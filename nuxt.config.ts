@@ -17,9 +17,10 @@ export default defineNuxtConfig({
   pinia: {
     storesDirs: ['./stores/**', ],
   },
-  
-  //app:{
-  //  baseURL: process.env.BASE_URL || 'http://localhost:3000',
-  //}
+  app:{
+    pageTransition: { name: 'page', mode: 'default'},
+    layoutTransition: { name: 'layout', mode: 'default'},
+
+  }
 
 })

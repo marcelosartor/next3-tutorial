@@ -1,4 +1,5 @@
 <template>
+<div>
   <div>
     Você está no video de numero {{ video?.id }}
   </div>
@@ -47,6 +48,7 @@
       </div>
     </UModal>
   </div>
+</div>
 </template>
 
 <script setup lang="ts">

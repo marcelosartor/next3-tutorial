@@ -95,5 +95,6 @@ https://www.youtube.com/@PabloCodess
 #### aula13 - 13 - Utils - Nuxt 3
 #### aula14 - 14 - useFetch e useAsyncData - Nuxt 3
 #### aula15 - 15 - Tratamento de erros - Nuxt 3
+#### aula16 - 16 - Transições e Página/Layouts - Nuxt 3
   Utilizado na aula
   Reqres API: https://reqres.in/
