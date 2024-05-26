@@ -20,6 +20,11 @@ export default defineNuxtConfig({
   app:{
     pageTransition: { name: 'page', mode: 'default'},
     layoutTransition: { name: 'layout', mode: 'default'},
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+      title: 'Meu site'
+    }
 
   }
 

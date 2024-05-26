@@ -38,7 +38,15 @@
 import { Video } from '@/interfaces/video';
 import { ErrorTypes } from 'vue-router';
 import formataData from '~/server/utils/formataData';
-
+useHead({
+  title: 'Teste Nuxt 3 -videos',
+  meta: [
+    {
+      name:'description',
+      content: 'Site para teste Nuxt 3 - pagina videos'
+    }
+  ] 
+})
   const { $toast } = useNuxtApp()
   const { adicionarFavorito } = useVideoStore();
   
