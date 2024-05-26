@@ -4,7 +4,7 @@
     Você está no video de numero {{ video?.id }}
   </div>
   <div>
-    Você está no video de numero(idParams) {{ idParams }}
+    Você está no video de numero(idParams) {{ id }}
   </div>
   <UCard class="w-[800px] justify-center">
     <template #header>
@@ -83,8 +83,15 @@ const { id } = useRoute().params
 
 
 console.log('id:',id)
-const { data: video } = await useFetch(`/api/v1/videos/${id}`)
+const { data: video } = await useFetch<Video>(`/api/v1/videos/${id}`)
 console.log('video',video)
+useSeoMeta({
+  title: 'Teste Nuxt 3 - videos id - with SeoMeta',
+  ogDescription: video.value?.descricao || '',
+  ogUrl: video.value?.url || '',
+  ogType: 'video.other'
+})
+
 if(!video.value){
   throw createError({
     statusCode: 404,
@@ -123,7 +130,7 @@ const abriModal = () => {
 
 const deletarVideo = async () =>{
   try{
-    await $fetch(`/api/v1/videos/${idParams.value}`,
+    await $fetch(`/api/v1/videos/${id}`,
       {
         method: 'DELETE',
       }

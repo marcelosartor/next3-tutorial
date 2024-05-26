@@ -1,6 +1,11 @@
 <template>
 <div>
   <div>
+    <Head>
+      <Title>Cliente - Test Nuxt</Title>
+      <Meta name="description" content="Teste Meta"/>
+      <Style type="text/css" children="body { background: gray  ;}"></Style>
+    </Head>
     <h1 class="text-5xl text-center my-4">Clientes</h1>
     {{ status }}
     <button @click="refresh" class="px-4 py-2 bg-green-400 shadow-md rounded-md">

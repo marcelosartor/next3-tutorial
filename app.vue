@@ -7,6 +7,17 @@
     </NuxtLayout>
   </div>
 </template>
+<script setup lang="ts">
+useHead({
+  title: 'Teste Nuxt 3',
+  meta: [
+    {
+      name:'description',
+      content: 'Site para teste Nuxt 3'
+    }
+  ] 
+})
+</script>
 <style>
 
 .page-enter-active,
